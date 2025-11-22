@@ -21,7 +21,12 @@ export default function Home() {
 
         <button
           onClick={() => router.push("/chat")}
-          className="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-lg font-semibold transition shadow-lg"
+          className="px-6 py-2 
+               bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 
+               text-white font-semibold rounded-full shadow-lg 
+               hover:from-indigo-600 hover:via-purple-700 hover:to-pink-700 
+               transition duration-300 ease-in-out 
+               cursor-pointer"
         >
           Hablar con LegalIA
         </button>
