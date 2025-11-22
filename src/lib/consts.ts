@@ -1,21 +1,20 @@
 export const UI_MESSAGES = {
   LOADING: {
-    STORY: 'Generando respuesta...',
-    IMAGE: 'Generando imagen...'
+    STORY: "Generando respuesta...",
   },
   ERROR: {
-    STORY_GENERATION: 'Error al generar historia',
-    IMAGE_GENERATION: 'Error al generar imagen',
-    MISSING_PROMPT: 'Falta el prompt para generar la historia'
+    STORY_GENERATION: "Error al generar historia",
+    IMAGE_GENERATION: "Error al generar imagen",
+    MISSING_PROMPT: "Falta el prompt para generar la historia",
   },
   PLACEHOLDERS: {
-    INPUT: 'Describe qué quieres hacer, adónde ir, qué examinar o cómo reaccionar...'
-  }
-}
+    INPUT: "Describe qué te gustaría saber",
+  },
+};
 
 export const GAME_CONFIG = {
   IMAGE: {
-    DEFAULT_PROMPT: 'zombie apocalypse scene pixel art style',
-    SEPARATOR: 'IMAGEN: '
-  }
-}
+    DEFAULT_PROMPT: "Asistente legal ",
+    SEPARATOR: "IMAGEN: ",
+  },
+};
