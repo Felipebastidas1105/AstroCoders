@@ -35,7 +35,7 @@ export default function Home () {
   }, [messages, image])
 
   return (
-    <div className='font-sans h-screen mx-auto overflow-hidden bg-gradient-to-t from-[var(--color-gradient-principal)] to-[var(--color-gradient-secondary)]'>
+    <div className='font-sans h-screen mx-auto overflow-hidden bg-gray-950'>
       {/* Contenedor principal en fila */}
       <div className='flex h-full'>
         {/* 🖼 Panel izquierdo: imagen */}
