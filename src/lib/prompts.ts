@@ -1,19 +1,17 @@
-
-
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
 export const getDocumentsContext = (): string => {
-  const docsDir = path.join(process.cwd(), 'src', 'documents');
+  const docsDir = path.join(process.cwd(), "src", "documents");
   let files: string[] = [];
   try {
     files = fs.readdirSync(docsDir);
   } catch {
-    return 'No se encontraron documentos.';
+    return "No se encontraron documentos.";
   }
   const docFiles = files.filter((f) => /\.(pdf|txt|md)$/i.test(f));
-  if (docFiles.length === 0) return 'No se encontraron documentos.';
-  return docFiles.map((f) => `- ${f}`).join('\n');
+  if (docFiles.length === 0) return "No se encontraron documentos.";
+  return docFiles.map((f) => `- ${f}`).join("\n");
 };
 
 export const LEGAL_ASSISTANT_PROMPTS = {
@@ -23,7 +21,10 @@ Genera una respuesta inicial profesional donde te presentas y explicas brevement
 
 Sé conciso y directo. Presenta tu función y termina SIEMPRE preguntando qué documento necesita analizar o qué duda legal tiene.`,
 
-  CONTINUE_CONVERSATION: (documentsContext: string, userMessage: string) => `Eres un asistente legal que analiza documentos y responde consultas jurídicas.
+  CONTINUE_CONVERSATION: (
+    documentsContext: string,
+    userMessage: string,
+  ) => `Eres un asistente legal que analiza documentos y responde consultas jurídicas.
 
 Documentos disponibles:
 ${documentsContext}
@@ -34,5 +35,5 @@ Responde la consulta basándote ÚNICAMENTE en los documentos proporcionados. S�
 
 Cita los artículos o secciones específicas del documento que respaldan tu respuesta. Si la información no está en los documentos, indícalo claramente.
 
-Termina SIEMPRE preguntando si necesita aclaración adicional o tiene otra consulta sobre los documentos.`
-}
+Termina SIEMPRE preguntando si necesita aclaración adicional o tiene otra consulta sobre los documentos.`,
+};

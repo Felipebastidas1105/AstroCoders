@@ -7,11 +7,9 @@ export function GameMessage({ message }: { message: GameMessageType }) {
 
   return (
     <Message from={role}>
-      <MessageContent> 
-        <Response>
-          {content}
-        </Response>
+      <MessageContent>
+        <Response>{content}</Response>
       </MessageContent>
     </Message>
-  )
+  );
 }
