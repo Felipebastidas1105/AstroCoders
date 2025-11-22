@@ -12,7 +12,7 @@ export const UI_MESSAGES = {
   },
 };
 
-export const GAME_CONFIG = {
+export const CONFIG = {
   IMAGE: {
     DEFAULT_PROMPT: "Asistente legal ",
     SEPARATOR: "IMAGEN: ",

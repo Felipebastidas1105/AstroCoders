@@ -1,12 +1,12 @@
 import { useState, useEffect, use } from "react";
 import type {
-  GameMessage,
+  ChatMessage,
   ConversationMessage,
   GenerateStoryResponse,
 } from "@/lib/types";
 
-export function useZombieGame() {
-  const [messages, setMessages] = useState<GameMessage[]>([]);
+export function useChat() {
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [language, setLanguage] = useState<string>("es");
@@ -32,7 +32,7 @@ export function useZombieGame() {
 
       const messageId = crypto.randomUUID();
 
-      const newMessage: GameMessage = {
+      const newMessage: ChatMessage = {
         id: messageId,
         role: "assistant",
         content: data.narrative,
@@ -51,7 +51,7 @@ export function useZombieGame() {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    const userMessage: GameMessage = {
+    const userMessage: ChatMessage = {
       id: crypto.randomUUID(),
       role: "user",
       content: input,
@@ -80,7 +80,7 @@ export function useZombieGame() {
 
       const messageId = crypto.randomUUID();
 
-      const assistantMessage: GameMessage = {
+      const assistantMessage: ChatMessage = {
         id: messageId,
         role: "assistant",
         content: data.narrative,

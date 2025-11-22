@@ -1,7 +1,7 @@
 import { Message, MessageContent } from "@/components/message";
 import { Loader } from "@/components/loader";
 
-export function GameLoader() {
+export function ChatLoader() {
   return (
     <Message from="assistant">
       <MessageContent>

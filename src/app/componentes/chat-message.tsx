@@ -1,8 +1,8 @@
 import { Message, MessageContent } from "@/components/message";
 import { Response } from "@/components/response";
-import { type GameMessage as GameMessageType } from "@/lib/types";
+import { type ChatMessage as ChatMessageType } from "@/lib/types";
 
-export function GameMessage({ message }: { message: GameMessageType }) {
+export function ChatMessage({ message }: { message: ChatMessageType }) {
   const { role, content } = message;
 
   return (

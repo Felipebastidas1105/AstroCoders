@@ -5,12 +5,12 @@ import {
   ConversationContent,
   ConversationScrollButton
 } from '@/components/conversation'
-import { GameInput } from '../componentes/game-input'
-import { GameLoader } from '../componentes/game-loader'
-import { GameMessage } from '../componentes/game-message'
-import { useZombieGame } from '../hooks/use-chat'
+import { ChatInput } from '../componentes/chat-input'
+import { ChatLoader } from '../componentes/chat-loader'
+import { ChatMessage } from '../componentes/chat-message'
+import { useChat } from '../hooks/use-chat'
 import { useState, useEffect, useRef } from 'react'
-import { type GameMessage as GameMessageType } from '@/lib/types'
+import { type ChatMessage as ChatMessageType } from '@/lib/types' 
 
 export default function Home () {
   const {
@@ -21,9 +21,9 @@ export default function Home () {
     handleInputChange,
     language,
     setLanguage
-  } = useZombieGame()
+  } = useChat()
   const [image, setImage] = useState<string | undefined>('')
-  const lastMessageRef = useRef<GameMessageType | null>(null)
+  const lastMessageRef = useRef<ChatMessageType | null>(null)
 
   useEffect(() => {
     if (messages.length > 0 && !image) {
@@ -41,7 +41,7 @@ export default function Home () {
         {/* 🖼 Panel izquierdo: imagen */}
         <div className='hidden md:flex items-center justify-center w-1/3 bg-transparent p-4'>
           <img
-            src='/imagenes/image.jpg'
+            src='https://res.cloudinary.com/dxnsmwmgv/image/upload/e_background_removal/f_png/v1763834780/justicia_bfee2y.jpg'
             alt='Ilustración'
             className='max-h-full w-auto object-contain'
           />
@@ -52,18 +52,18 @@ export default function Home () {
            <Conversation>
             <ConversationContent className='max-w-xl mx-auto'>
               {messages.map(message => (
-                <GameMessage 
+                <ChatMessage 
                   key={message.id} 
                   message={message}
                 />
               ))}
-              {isLoading && <GameLoader />}
+              {isLoading && <ChatLoader />}
             </ConversationContent>
             <ConversationScrollButton />
           </Conversation>
 
           <div className='max-w-2xl w-full mx-auto pb-4'>
-            <GameInput
+            <ChatInput
               input={input}
               onInputChange={handleInputChange}
               onSubmit={handleSubmit}

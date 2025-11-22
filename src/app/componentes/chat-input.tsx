@@ -12,7 +12,7 @@ import {
 } from "@/components/prompt-input";
 import { UI_MESSAGES } from "@/lib/consts";
 
-interface GameInputProps {
+interface ChatInputProps {
   input: string;
   onInputChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -21,14 +21,14 @@ interface GameInputProps {
   onLanguageChange: (value: string) => void;
 }
 
-export function GameInput({
+export function ChatInput({
   input,
   onInputChange,
   onSubmit,
   isLoading,
   language,
   onLanguageChange,
-}: GameInputProps) {
+}: ChatInputProps) {
   const inputTrimmed = input.trim();
   const inputSubmitIsDisabled = isLoading || inputTrimmed === "";
 

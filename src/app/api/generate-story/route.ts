@@ -4,7 +4,7 @@ import { generateText } from "ai";
 import { type NextRequest, NextResponse } from "next/server";
 
 import { LEGAL_ASSISTANT_PROMPTS, getDocumentsContext } from "@/lib/prompts";
-import { GAME_CONFIG } from "@/lib/consts";
+import { CONFIG } from "@/lib/consts";
 import { GenerateStoryRequest } from "@/lib/types";
 
 export async function POST(request: NextRequest) {
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
       prompt,
     });
 
-    const [narrative, imagePrompt] = text.split(GAME_CONFIG.IMAGE.SEPARATOR);
+    const [narrative, imagePrompt] = text.split(CONFIG.IMAGE.SEPARATOR);
 
     return NextResponse.json({ narrative, imagePrompt });
   } catch (error) {
